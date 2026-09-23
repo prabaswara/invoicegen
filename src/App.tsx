@@ -65,39 +65,56 @@ function App() {
   };
 
   return (
-    <div className="min-h-screen confetti-bg bg-gradient-to-br from-amber-50 via-pink-50 to-purple-50">
+    <div className="min-h-screen" style={{
+      background: 'linear-gradient(135deg, #fef3c7 0%, #fce7f3 50%, #ede9fe 100%)',
+      fontFamily: "'Nunito', sans-serif"
+    }}>
       {/* Floating Decorative Elements */}
       <div className="fixed inset-0 pointer-events-none overflow-hidden z-0">
-        <div className="absolute top-20 left-10 w-20 h-20 bg-yellow-200/30 rounded-full blur-xl animate-float"></div>
-        <div className="absolute top-40 right-20 w-32 h-32 bg-pink-200/30 rounded-full blur-xl animate-float" style={{ animationDelay: '1s' }}></div>
-        <div className="absolute bottom-40 left-1/4 w-24 h-24 bg-purple-200/30 rounded-full blur-xl animate-float" style={{ animationDelay: '2s' }}></div>
-        <div className="absolute bottom-20 right-1/3 w-28 h-28 bg-cyan-200/30 rounded-full blur-xl animate-float" style={{ animationDelay: '0.5s' }}></div>
+        <div className="absolute top-20 left-10 w-32 h-32 bg-yellow-300/40 rounded-full blur-2xl animate-float"></div>
+        <div className="absolute top-40 right-20 w-40 h-40 bg-pink-300/40 rounded-full blur-2xl animate-float" style={{ animationDelay: '1s' }}></div>
+        <div className="absolute bottom-40 left-1/4 w-36 h-36 bg-purple-300/40 rounded-full blur-2xl animate-float" style={{ animationDelay: '2s' }}></div>
+        <div className="absolute bottom-20 right-1/3 w-44 h-44 bg-cyan-300/40 rounded-full blur-2xl animate-float" style={{ animationDelay: '0.5s' }}></div>
+        <div className="absolute top-1/2 left-1/2 w-48 h-48 bg-rose-300/30 rounded-full blur-3xl animate-float" style={{ animationDelay: '1.5s' }}></div>
       </div>
 
       {/* Header */}
-      <header className="relative z-50 bg-white/70 backdrop-blur-xl border-b border-white/50 sticky top-0">
+      <header className="relative z-50 bg-white/90 backdrop-blur-xl border-b-2 border-pink-200 sticky top-0 shadow-lg">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 py-3 sm:py-4">
           <div className="flex items-center justify-between">
             <div className="flex items-center gap-3">
               <div className="relative">
-                <div className="w-11 h-11 sm:w-12 sm:h-12 bg-gradient-to-br from-amber-400 via-pink-500 to-purple-600 rounded-2xl flex items-center justify-center shadow-lg shadow-pink-200/50 animate-gradient">
-                  <svg className="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <div className="w-12 h-12 sm:w-14 sm:h-14 rounded-2xl flex items-center justify-center shadow-xl" style={{
+                  background: 'linear-gradient(135deg, #fbbf24 0%, #ec4899 50%, #8b5cf6 100%)',
+                  animation: 'gradient-shift 4s ease infinite'
+                }}>
+                  <svg className="w-7 h-7 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
                   </svg>
                 </div>
-                <div className="absolute -top-1 -right-1 w-4 h-4 bg-green-400 rounded-full border-2 border-white animate-sparkle"></div>
+                <div className="absolute -top-1 -right-1 w-4 h-4 bg-green-400 rounded-full border-2 border-white animate-pulse"></div>
               </div>
               <div>
-                <h1 className="text-lg sm:text-xl font-extrabold bg-gradient-to-r from-amber-500 via-pink-500 to-purple-600 bg-clip-text text-transparent">
+                <h1 className="text-xl sm:text-2xl font-black" style={{
+                  background: 'linear-gradient(90deg, #f59e0b, #ec4899, #8b5cf6)',
+                  WebkitBackgroundClip: 'text',
+                  WebkitTextFillColor: 'transparent',
+                  backgroundClip: 'text'
+                }}>
                   Invoice Generator ✨
                 </h1>
-                <p className="text-[10px] sm:text-xs text-gray-400 font-medium">Buat invoice cantik dalam sekejap!</p>
+                <p className="text-xs sm:text-sm text-gray-500 font-semibold">Buat invoice cantik dalam sekejap! 🎨</p>
               </div>
             </div>
             <button
               onClick={handleDownloadPDF}
               disabled={isDownloading}
-              className="btn-press flex items-center gap-2 px-4 sm:px-6 py-2.5 sm:py-3 bg-gradient-to-r from-amber-400 via-pink-500 to-purple-600 text-white rounded-2xl font-bold text-sm shadow-lg shadow-pink-300/40 hover:shadow-xl hover:shadow-pink-300/60 transition-all hover:-translate-y-1 disabled:opacity-50 disabled:cursor-not-allowed disabled:hover:translate-y-0 animate-gradient"
+              className="btn-press flex items-center gap-2 px-5 sm:px-7 py-3 sm:py-3.5 text-white rounded-2xl font-extrabold text-sm shadow-2xl transition-all hover:-translate-y-1 disabled:opacity-50 disabled:cursor-not-allowed disabled:hover:translate-y-0"
+              style={{
+                background: 'linear-gradient(135deg, #f59e0b 0%, #ec4899 50%, #8b5cf6 100%)',
+                boxShadow: '0 10px 30px -5px rgba(236, 72, 153, 0.5)',
+                animation: 'gradient-shift 4s ease infinite'
+              }}
             >
               {isDownloading ? (
                 <>
@@ -173,7 +190,10 @@ function App() {
                 </div>
                 <span className="text-xs text-gray-400 font-medium hidden sm:inline">— Perubahan langsung terlihat</span>
               </div>
-              <div className="bg-gradient-to-br from-purple-100/50 via-pink-100/50 to-amber-100/50 rounded-3xl p-3 sm:p-5 md:p-8 shadow-inner border border-white/60">
+              <div className="rounded-3xl p-3 sm:p-5 md:p-8" style={{
+                background: 'linear-gradient(135deg, #ede9fe 0%, #fce7f3 50%, #fef3c7 100%)',
+                boxShadow: 'inset 0 2px 10px rgba(0, 0, 0, 0.05)'
+              }}>
                 <InvoicePreview data={data} />
               </div>
             </div>
@@ -183,10 +203,17 @@ function App() {
 
       {/* Footer */}
       <footer className="relative z-10 text-center py-6 sm:py-8">
-        <div className="inline-flex items-center gap-2 bg-white/60 backdrop-blur-sm px-4 py-2 rounded-full border border-white/50">
-          <span className="text-sm">Dibuat dengan</span>
-          <span className="text-pink-500 animate-bounce-slow">❤️</span>
-          <span className="text-sm text-gray-500 font-medium">Invoice Generator © 2026</span>
+        <div className="inline-flex items-center gap-2 bg-white/80 backdrop-blur-sm px-5 py-3 rounded-full border-2 border-pink-200 shadow-lg" style={{
+          boxShadow: '0 10px 30px -5px rgba(236, 72, 153, 0.2)'
+        }}>
+          <span className="text-sm font-semibold">Dibuat dengan</span>
+          <span className="text-xl" style={{ animation: 'bounce-slow 2s ease-in-out infinite' }}>❤️</span>
+          <span className="text-sm font-bold" style={{
+            background: 'linear-gradient(90deg, #f59e0b, #ec4899, #8b5cf6)',
+            WebkitBackgroundClip: 'text',
+            WebkitTextFillColor: 'transparent',
+            backgroundClip: 'text'
+          }}>Invoice Generator © 2026</span>
         </div>
       </footer>
     </div>

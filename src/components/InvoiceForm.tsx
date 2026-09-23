@@ -36,11 +36,16 @@ const InvoiceForm: React.FC<Props> = ({ data, onChange }) => {
   };
 
   return (
-    <div className="space-y-4 sm:space-y-5 animate-slide-up">
+    <div className="space-y-4 sm:space-y-5">
       {/* Invoice Info */}
-      <div className="card-hover bg-white/80 backdrop-blur-sm rounded-3xl shadow-lg shadow-amber-100/50 border border-amber-100/50 p-4 sm:p-6">
-        <h3 className="text-base sm:text-lg font-extrabold text-gray-800 mb-4 flex items-center gap-2">
-          <span className="w-9 h-9 bg-gradient-to-br from-amber-300 to-orange-400 rounded-xl flex items-center justify-center text-lg shadow-md shadow-amber-200/50">📄</span>
+      <div className="card-hover bg-white rounded-3xl p-4 sm:p-6 border-2 border-amber-200" style={{
+        boxShadow: '0 10px 40px -10px rgba(251, 191, 36, 0.3)'
+      }}>
+        <h3 className="text-base sm:text-lg font-black text-gray-800 mb-4 flex items-center gap-2">
+          <span className="w-10 h-10 rounded-xl flex items-center justify-center text-xl" style={{
+            background: 'linear-gradient(135deg, #fcd34d, #fb923c)',
+            boxShadow: '0 4px 15px rgba(251, 146, 60, 0.4)'
+          }}>📄</span>
           <span>Info Invoice</span>
         </h3>
         <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 sm:gap-4">
@@ -105,9 +110,14 @@ const InvoiceForm: React.FC<Props> = ({ data, onChange }) => {
       </div>
 
       {/* From */}
-      <div className="card-hover bg-white/80 backdrop-blur-sm rounded-3xl shadow-lg shadow-green-100/50 border border-green-100/50 p-4 sm:p-6">
-        <h3 className="text-base sm:text-lg font-extrabold text-gray-800 mb-4 flex items-center gap-2">
-          <span className="w-9 h-9 bg-gradient-to-br from-green-300 to-emerald-500 rounded-xl flex items-center justify-center text-lg shadow-md shadow-green-200/50">🏢</span>
+      <div className="card-hover bg-white rounded-3xl p-4 sm:p-6 border-2 border-green-200" style={{
+        boxShadow: '0 10px 40px -10px rgba(34, 197, 94, 0.3)'
+      }}>
+        <h3 className="text-base sm:text-lg font-black text-gray-800 mb-4 flex items-center gap-2">
+          <span className="w-10 h-10 rounded-xl flex items-center justify-center text-xl" style={{
+            background: 'linear-gradient(135deg, #86efac, #10b981)',
+            boxShadow: '0 4px 15px rgba(16, 185, 129, 0.4)'
+          }}>🏢</span>
           <span>Dari (Pengirim)</span>
         </h3>
         <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 sm:gap-4">
@@ -155,9 +165,14 @@ const InvoiceForm: React.FC<Props> = ({ data, onChange }) => {
       </div>
 
       {/* To */}
-      <div className="card-hover bg-white/80 backdrop-blur-sm rounded-3xl shadow-lg shadow-purple-100/50 border border-purple-100/50 p-4 sm:p-6">
-        <h3 className="text-base sm:text-lg font-extrabold text-gray-800 mb-4 flex items-center gap-2">
-          <span className="w-9 h-9 bg-gradient-to-br from-purple-300 to-violet-500 rounded-xl flex items-center justify-center text-lg shadow-md shadow-purple-200/50">👤</span>
+      <div className="card-hover bg-white rounded-3xl p-4 sm:p-6 border-2 border-purple-200" style={{
+        boxShadow: '0 10px 40px -10px rgba(168, 85, 247, 0.3)'
+      }}>
+        <h3 className="text-base sm:text-lg font-black text-gray-800 mb-4 flex items-center gap-2">
+          <span className="w-10 h-10 rounded-xl flex items-center justify-center text-xl" style={{
+            background: 'linear-gradient(135deg, #c4b5fd, #8b5cf6)',
+            boxShadow: '0 4px 15px rgba(139, 92, 246, 0.4)'
+          }}>👤</span>
           <span>Kepada (Penerima)</span>
         </h3>
         <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 sm:gap-4">
@@ -205,11 +220,18 @@ const InvoiceForm: React.FC<Props> = ({ data, onChange }) => {
       </div>
 
       {/* Items */}
-      <div className="card-hover bg-white/80 backdrop-blur-sm rounded-3xl shadow-lg shadow-pink-100/50 border border-pink-100/50 p-4 sm:p-6">
-        <h3 className="text-base sm:text-lg font-extrabold text-gray-800 mb-4 flex items-center gap-2">
-          <span className="w-9 h-9 bg-gradient-to-br from-pink-300 to-rose-500 rounded-xl flex items-center justify-center text-lg shadow-md shadow-pink-200/50">📦</span>
+      <div className="card-hover bg-white rounded-3xl p-4 sm:p-6 border-2 border-pink-200" style={{
+        boxShadow: '0 10px 40px -10px rgba(236, 72, 153, 0.3)'
+      }}>
+        <h3 className="text-base sm:text-lg font-black text-gray-800 mb-4 flex items-center gap-2">
+          <span className="w-10 h-10 rounded-xl flex items-center justify-center text-xl" style={{
+            background: 'linear-gradient(135deg, #f9a8d4, #ec4899)',
+            boxShadow: '0 4px 15px rgba(236, 72, 153, 0.4)'
+          }}>📦</span>
           <span>Item Invoice</span>
-          <span className="ml-auto text-xs font-bold text-pink-500 bg-pink-50 px-2.5 py-1 rounded-full">
+          <span className="ml-auto text-xs font-bold text-white px-3 py-1 rounded-full" style={{
+            background: 'linear-gradient(135deg, #ec4899, #8b5cf6)'
+          }}>
             {data.items.length} item
           </span>
         </h3>
@@ -217,8 +239,12 @@ const InvoiceForm: React.FC<Props> = ({ data, onChange }) => {
           {data.items.map((item, index) => (
             <div
               key={item.id}
-              className="animate-pop-in bg-gradient-to-r from-pink-50/80 to-purple-50/80 p-3 sm:p-4 rounded-2xl border border-pink-100/50 relative group"
-              style={{ animationDelay: `${index * 0.1}s` }}
+              className="p-3 sm:p-4 rounded-2xl border-2 relative group"
+              style={{ 
+                background: 'linear-gradient(135deg, #fdf2f8 0%, #faf5ff 100%)',
+                borderColor: '#f9a8d4',
+                animationDelay: `${index * 0.1}s`
+              }}
             >
               <div className="absolute top-2 right-2 sm:top-3 sm:right-3">
                 <span className="text-xs font-bold text-pink-400 bg-white/80 px-2 py-0.5 rounded-full">
@@ -276,16 +302,34 @@ const InvoiceForm: React.FC<Props> = ({ data, onChange }) => {
         </div>
         <button
           onClick={addItem}
-          className="btn-press mt-4 w-full py-3 border-2 border-dashed border-pink-200 rounded-2xl text-pink-400 hover:border-pink-400 hover:text-pink-500 hover:bg-pink-50/50 transition-all flex items-center justify-center gap-2 text-sm font-bold"
+          className="btn-press mt-4 w-full py-3.5 border-2 border-dashed rounded-2xl transition-all flex items-center justify-center gap-2 text-sm font-black"
+          style={{
+            borderColor: '#ec4899',
+            color: '#ec4899',
+            background: 'linear-gradient(135deg, #fdf2f8 0%, #faf5ff 100%)'
+          }}
+          onMouseEnter={(e) => {
+            e.currentTarget.style.background = 'linear-gradient(135deg, #fce7f3 0%, #f3e8ff 100%)';
+            e.currentTarget.style.transform = 'scale(1.02)';
+          }}
+          onMouseLeave={(e) => {
+            e.currentTarget.style.background = 'linear-gradient(135deg, #fdf2f8 0%, #faf5ff 100%)';
+            e.currentTarget.style.transform = 'scale(1)';
+          }}
         >
-          <span className="text-xl animate-bounce-slow">✨</span> Tambah Item Baru
+          <span className="text-2xl">✨</span> Tambah Item Baru
         </button>
       </div>
 
       {/* Notes */}
-      <div className="card-hover bg-white/80 backdrop-blur-sm rounded-3xl shadow-lg shadow-cyan-100/50 border border-cyan-100/50 p-4 sm:p-6">
-        <h3 className="text-base sm:text-lg font-extrabold text-gray-800 mb-4 flex items-center gap-2">
-          <span className="w-9 h-9 bg-gradient-to-br from-cyan-300 to-blue-500 rounded-xl flex items-center justify-center text-lg shadow-md shadow-cyan-200/50">📝</span>
+      <div className="card-hover bg-white rounded-3xl p-4 sm:p-6 border-2 border-cyan-200" style={{
+        boxShadow: '0 10px 40px -10px rgba(6, 182, 212, 0.3)'
+      }}>
+        <h3 className="text-base sm:text-lg font-black text-gray-800 mb-4 flex items-center gap-2">
+          <span className="w-10 h-10 rounded-xl flex items-center justify-center text-xl" style={{
+            background: 'linear-gradient(135deg, #67e8f9, #06b6d4)',
+            boxShadow: '0 4px 15px rgba(6, 182, 212, 0.4)'
+          }}>📝</span>
           <span>Catatan</span>
         </h3>
         <textarea

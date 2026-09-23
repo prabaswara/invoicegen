@@ -28,12 +28,17 @@ const InvoicePreview: React.FC<Props> = ({ data }) => {
   const total = subtotal + taxAmount;
 
   return (
-    <div id="invoice-preview" className="bg-white rounded-3xl overflow-hidden shadow-xl max-w-[800px] mx-auto">
+    <div id="invoice-preview" className="bg-white rounded-3xl overflow-hidden max-w-[800px] mx-auto" style={{
+      boxShadow: '0 25px 50px -12px rgba(0, 0, 0, 0.25)'
+    }}>
       {/* Colorful Header Banner */}
-      <div className="bg-gradient-to-r from-amber-400 via-pink-500 to-purple-600 p-6 sm:p-8 relative overflow-hidden">
-        <div className="absolute inset-0 opacity-10">
+      <div className="p-6 sm:p-8 relative overflow-hidden" style={{
+        background: 'linear-gradient(135deg, #fbbf24 0%, #ec4899 50%, #8b5cf6 100%)'
+      }}>
+        <div className="absolute inset-0 opacity-20">
           <div className="absolute top-0 left-0 w-40 h-40 bg-white rounded-full -translate-x-1/2 -translate-y-1/2"></div>
           <div className="absolute bottom-0 right-0 w-60 h-60 bg-white rounded-full translate-x-1/3 translate-y-1/3"></div>
+          <div className="absolute top-1/2 left-1/2 w-32 h-32 bg-white rounded-full"></div>
         </div>
         <div className="relative flex flex-col sm:flex-row justify-between items-start sm:items-center gap-4">
           <div>
@@ -88,7 +93,9 @@ const InvoicePreview: React.FC<Props> = ({ data }) => {
         <div className="mb-8 overflow-x-auto -mx-2 sm:mx-0">
           <table className="w-full min-w-[400px]">
             <thead>
-              <tr className="bg-gradient-to-r from-purple-500 to-pink-500 text-white">
+              <tr className="text-white" style={{
+                background: 'linear-gradient(135deg, #8b5cf6 0%, #ec4899 100%)'
+              }}>
                 <th className="text-left py-3 px-3 sm:px-4 rounded-tl-2xl text-xs sm:text-sm font-bold">Deskripsi</th>
                 <th className="text-center py-3 px-3 sm:px-4 text-xs sm:text-sm font-bold">Qty</th>
                 <th className="text-right py-3 px-3 sm:px-4 text-xs sm:text-sm font-bold">Harga</th>
@@ -130,7 +137,10 @@ const InvoicePreview: React.FC<Props> = ({ data }) => {
 
         {/* Totals */}
         <div className="flex justify-end mb-8">
-          <div className="w-full sm:w-72 bg-gradient-to-br from-gray-50 to-purple-50/50 rounded-2xl p-4 sm:p-5 border border-purple-100/50">
+          <div className="w-full sm:w-72 rounded-2xl p-4 sm:p-5 border-2" style={{
+            background: 'linear-gradient(135deg, #f9fafb 0%, #faf5ff 100%)',
+            borderColor: '#e9d5ff'
+          }}>
             <div className="flex justify-between py-2 text-sm">
               <span className="text-gray-500 font-medium">Subtotal</span>
               <span className="text-gray-800 font-bold">{formatCurrency(subtotal)}</span>
@@ -139,7 +149,9 @@ const InvoicePreview: React.FC<Props> = ({ data }) => {
               <span className="text-gray-500 font-medium">Pajak ({data.taxRate}%)</span>
               <span className="text-gray-800 font-bold">{formatCurrency(taxAmount)}</span>
             </div>
-            <div className="flex justify-between py-3 mt-2 bg-gradient-to-r from-amber-400 to-pink-500 rounded-xl px-4 -mx-1">
+            <div className="flex justify-between py-3 mt-2 rounded-xl px-4 -mx-1" style={{
+              background: 'linear-gradient(135deg, #fbbf24 0%, #ec4899 100%)'
+            }}>
               <span className="text-base sm:text-lg font-black text-white">Total</span>
               <span className="text-base sm:text-lg font-black text-white">{formatCurrency(total)}</span>
             </div>
